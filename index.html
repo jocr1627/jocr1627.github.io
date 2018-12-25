@@ -1,0 +1,108 @@
+<script>
+    const showHorrorPage = () => {
+        const card = document.getElementById('card');
+        const happyPage = document.getElementById('happyPage');
+        const horrorBackground = document.createElement('img');
+        const iframe = document.createElement('iframe');
+        const horrorMessage = document.createElement('div');
+
+        horrorBackground.classList.add('background');
+        horrorBackground.setAttribute('src', 'https://davidjrodger.files.wordpress.com/2012/12/zombie-christmas-undead-blood-covered-snowmen.jpg');
+
+        iframe.setAttribute('allow', 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture');
+        iframe.setAttribute('allowfullscreen', 'true');
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('height', '441');
+        iframe.setAttribute('src', 'https://www.youtube.com/embed/v8_ovw0QaUM?autoplay=1&start=3');
+        iframe.setAttribute('width', '784');
+        iframe.style.position = 'absolute';
+
+        horrorMessage.classList.add('message');
+        horrorMessage.style.position = 'absolute';
+        horrorMessage.style.top = '3rem';
+        horrorMessage.textContent = 'Coming to your Xbox Jan 25th';
+
+        happyPage.remove();
+        card.appendChild(horrorBackground);
+        card.appendChild(iframe);
+        card.appendChild(horrorMessage);
+    }
+</script>
+
+<style>
+    .background {
+        height: 100%;
+        width: 100%;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    #card {
+        align-items:center;
+        background-color: black;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #happyMessage {
+        position: absolute;
+        top: 16rem;
+    }
+
+    #happyPage {
+        display: flex;
+        justify-content: center;
+    }
+
+    .message {
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 0.5rem;
+        font-size: 2.5rem;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    #openButton {
+        background-color: darkgreen;
+        border: 0.2rem solid black;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        font-family: cursive;
+        font-size: 2.5rem;
+        height: 5rem;
+        position: absolute;
+        top: 25rem;
+    }
+
+    #openButton:active {
+        opacity: 0.7;
+        outline: 0;
+    }
+
+    #title {
+        position: absolute;
+        top: 1rem;
+    }
+</style>
+
+<div id="card">
+    <div id="happyPage">
+        <img id="title" src="http://www.animatedimages.org/data/media/570/animated-merry-christmas-image-0116.gif">
+        <img class="background" id="happyBackground" src="https://timedotcom.files.wordpress.com/2015/01/159718526.jpg"/>
+        <div class="message" id="happyMessage" >Love you brother! I hope you and AD have a great Christmas!</div>
+        <button id="openButton" onclick="showHorrorPage()">Open Your Gift!</button>
+        <iframe
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            frameborder="0"
+            height="0"
+            src="https://www.youtube.com/embed/krhB_YlX90w?autoplay=1"
+            width="0"
+            >
+        </iframe>
+    </div>
+</div>
